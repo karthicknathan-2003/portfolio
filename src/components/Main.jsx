@@ -3,10 +3,12 @@ import Hero from './Hero';
 import Projects from './Projects';
 import Contact from './Contact';
 import About from './About';
+import { Toaster } from 'sonner';
 
 export default function Main() {
   return (
     <div className="bg-dark text-light min-vh-100" style={{ backgroundColor: '#141414' }}>
+      <Toaster richColors position="top-center" />
       <Navbar />
       <Hero />
       <About />

@@ -10,6 +10,8 @@ import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "./ui/c
 import { Button } from "./ui/button";
 import { Separator } from "./ui/separator";
 import { BOOTSTRAP_ICON_COLOR, DOCKER_ICON_COLOR, GITHUB_LINK, JAVASCRIPT_ICON_COLOR, REACT_ICON_COLOR, SPRING_BOOT_ICON_COLOR, TAILWIND_ICON_COLOR, VERSION_CONTROL_ICON_COLOR } from "@/constant";
+import project_manager from "../assets/project-manager.png"
+import movies_app from "../assets/movies-app.png";
 
 // Shared technology stack defined once outside the component to avoid re-creation on every render.
 const TECH_STACK = [
@@ -30,8 +32,7 @@ const PROJECTS = [
     title: "CineVault - Movies App",
     description:
       "Full-stack movie discovery app with user authentication, personalized watchlists, and real-time reviews. Users can browse trending movies, search by genre, and receive tailored recommendations based on their viewing history. It Uses TMDB API for movie data and integrations.",
-    image:
-      "/src/assets/movies-app.png",
+    image: movies_app,
     technologies: [{
       icon: SiReact, name: "React JS", color: REACT_ICON_COLOR,
     }, {
@@ -52,8 +53,7 @@ const PROJECTS = [
     title: "Project Manager - Task Tracker for Developers",
     description:
       "Collaborative project management tool with Kanban boards, real-time updates, and team communication features. Users can create projects, assign tasks, set deadlines, and track progress with visual dashboards.",
-    image:
-      "/src/assets/project-manager.png",
+    image: project_manager,
     technologies: [{
       icon: SiReact, name: "React JS", color: REACT_ICON_COLOR,
     }, {

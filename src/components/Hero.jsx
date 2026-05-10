@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
-import { GITHUB_LINK, HERO_IMAGE_URL, INSTAGRAM_LINK, LINKEDIN_LINK } from "../constant";
+import { GITHUB_LINK, INSTAGRAM_LINK, LINKEDIN_LINK } from "../constant";
 import { SiGithub, SiInstagram, SiLinkedin } from "react-icons/si";
+import heroImage from "../assets/hero-image.jpg";
 
 export default function Hero() {
     return (
@@ -8,7 +9,7 @@ export default function Hero() {
             {/* Background Image */}
             <div
                 className="absolute inset-0 bg-cover bg-center"
-                style={{ backgroundImage: `url(${HERO_IMAGE_URL})` }}
+                style={{ backgroundImage: `url(${heroImage})` }}
             ></div>
 
             {/* Hero Content */}
@@ -26,7 +27,9 @@ export default function Hero() {
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-5">
-                    <a className="btn-custom text-white px-6 py-3 rounded-lg text-lg flex items-center hover:bg-red-700 transition">
+                    <a className="btn-custom text-white px-6 py-3 rounded-lg text-lg flex items-center hover:bg-red-700 transition"
+                        href="/resume.pdf" target="_blank" rel="noopener noreferrer"
+                    >
                         Check out Resume
                         <ArrowRight className="ml-2" size={16} />
                     </a>

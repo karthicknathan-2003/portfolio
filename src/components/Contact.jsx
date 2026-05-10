@@ -1,28 +1,57 @@
 import { useState } from "react";
 import { Mail, MapPin, Phone, Send, Loader } from "lucide-react";
 import { ADDRESS, MAIL_ID, PHONE_NO } from "../constant";
+import { toast } from "sonner";
 
 export default function Contact() {
     const [loading, setLoading] = useState(false);
     const CONTACT_INFO = [{
-            icon: Mail,
-            title: "Email",
-            content: MAIL_ID,
-            link: `mailto:${MAIL_ID}`,
-        },
-        {
-            icon: Phone,
-            title: "Phone",
-            content: PHONE_NO,
-            link: `tel:${PHONE_NO}`,
-        },
-        {
-            icon: MapPin,
-            title: "Location",
-            content: ADDRESS,
-            link: "#",
-        },
-    ];
+        icon: Mail,
+        title: "Email",
+        content: MAIL_ID,
+        link: `mailto:${MAIL_ID}`,
+    },
+    {
+        icon: Phone,
+        title: "Phone",
+        content: PHONE_NO,
+        link: `tel:${PHONE_NO}`,
+    },
+    {
+        icon: MapPin,
+        title: "Location",
+        content: ADDRESS,
+        link: "#",
+    },];
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setLoading(true);
+        const form = e.target;
+        const formData = new FormData(form);
+        // Important for Netlify. It identifies the form submission.
+        formData.append("form-name", "contact");
+        try {
+            const response = await fetch("/", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                },
+                body: new URLSearchParams(formData).toString(),
+            });
+
+            if (!response.ok) {
+                throw new Error("Failed to send message");
+            }
+            toast.success("Message sent successfully!");
+            form.reset();
+        } catch (error) {
+            console.error("Error sending message:", error);
+            toast.error("Failed to send message");
+        } finally {
+            setLoading(false);
+        }
+    };
 
     return (
         <section id="contact" className="py-16 text-white">
@@ -84,7 +113,7 @@ export default function Contact() {
                                 method="POST"
                                 data-netlify="true"
                                 netlify-honeypot="bot-field"
-                                onSubmit={() => setLoading(true)}
+                                onSubmit={handleSubmit}
                                 className="space-y-4 form-custom"
                             >
                                 {/* Hidden fields */}
