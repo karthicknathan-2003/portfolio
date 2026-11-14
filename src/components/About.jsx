@@ -71,7 +71,7 @@ export default function About() {
                                         <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-3">
                                             <h5 className="text-lg font-semibold mb-1">{exp.role}</h5>
                                             <span className="text-sm badge-custom-small px-3 py-1 rounded-full max-w-[120px] sm:max-w-full truncate">{exp.jobType}</span>
-                                            <span className="text-sm badge-custom-small px-3 py-1 rounded-full max-w-[120px] sm:max-w-full truncate">{exp.timeline}</span>
+                                            <span className="text-sm badge-custom-small px-3 py-1 rounded-full w-fit whitespace-nowrap">{exp.timeline}</span>
                                         </div>
                                         <h6 className="text-gradient text-lg font-semibold mb-1">{exp.company}</h6>
                                         <p className="text-white/90 text-sm mb-3 leading-relaxed">

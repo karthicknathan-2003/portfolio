@@ -12,10 +12,12 @@ export const ADDRESS = 'Tenkasi, 627857'
 export const HERO_IMAGE_URL = "/src/assets/hero-image.jpg";
 
 // Project URLs.
-export const MOVIES_APP_REPO_URL = ""
-export const MOVIES_APP_LIVE_URL = ""
-export const TODO_APP_REPO_URL = ""
-export const TODO_APP_LIVE_URL = ""
+export const MOVIES_APP_REPO_URL = "https://github.com/karthicknathan-2003/movies-app"
+export const SERVER_PILOT_REPO_URL = "https://github.com/karthicknathan-2003/server-pilot"
+
+// Project Live URLs.
+export const MOVIES_APP_LIVE_URL = "https://mycinevault.netlify.app"
+export const SERVER_PILOT_LIVE_URL = ""
 
 // Navigation items defined outside the component to prevent re-creation on every render.
 export const NAV_ITEMS = [
@@ -27,7 +29,7 @@ export const NAV_ITEMS = [
 
 export const EXPERIENCE = [{
     role: "Java Developer",
-    company: "Ultramain Sofware India",
+    company: "Ultramain Software India",
     timeline: "May 2024 - Present",
     jobType: "Full time",
     techStack: ['Java', 'JEE', 'Hibernate', 'EJB', 'Maven', 'JBoss', 'SQL', 'XML', 'JavaScript'],
@@ -55,3 +57,6 @@ export const BOOTSTRAP_ICON_COLOR = "#7952B3";
 export const GITHUB_ICON_COLOR = "#181717";
 export const INSTAGRAM_ICON_COLOR = "#E4405F";
 export const LINKEDIN_ICON_COLOR = "#0077B5";
+export const LINUX_ICON_COLOR = "#FCC624";
+export const SSH_ICON_COLOR = "#4EAA25";
+export const JAVA_ICON_COLOR = "#ED8B00";

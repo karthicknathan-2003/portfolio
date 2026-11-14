@@ -1,17 +1,34 @@
 import { memo } from "react";
-import { ExternalLink, ArrowUpRight, CheckCircle2, Clock3 } from "lucide-react";
+import { ExternalLink, ArrowUpRight, CheckCircle2, Clock3, Terminal } from "lucide-react";
 import {
   SiReact, SiSpringboot, SiTailwindcss, SiBootstrap,
   SiDocker, SiGit, SiJavascript, SiGithub,
+  SiLinux,
 } from "react-icons/si";
+import { FaJava } from "react-icons/fa6";
 import { Tooltip, TooltipProvider, TooltipTrigger } from "./ui/tooltip";
 import { Badge } from "./ui/badge";
 import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "./ui/card";
 import { Button } from "./ui/button";
 import { Separator } from "./ui/separator";
-import { BOOTSTRAP_ICON_COLOR, DOCKER_ICON_COLOR, GITHUB_LINK, JAVASCRIPT_ICON_COLOR, REACT_ICON_COLOR, SPRING_BOOT_ICON_COLOR, TAILWIND_ICON_COLOR, VERSION_CONTROL_ICON_COLOR } from "@/constant";
-import project_manager from "../assets/project-manager.png"
-import movies_app from "../assets/movies-app.png";
+import {
+  BOOTSTRAP_ICON_COLOR,
+  DOCKER_ICON_COLOR,
+  GITHUB_LINK,
+  JAVASCRIPT_ICON_COLOR,
+  JAVA_ICON_COLOR,
+  LINUX_ICON_COLOR,
+  MOVIES_APP_LIVE_URL,
+  MOVIES_APP_REPO_URL,
+  REACT_ICON_COLOR,
+  SERVER_PILOT_REPO_URL,
+  SPRING_BOOT_ICON_COLOR,
+  SSH_ICON_COLOR,
+  TAILWIND_ICON_COLOR,
+  VERSION_CONTROL_ICON_COLOR,
+} from "@/constant";
+import movies_app from "../assets/movies_app_1.png";
+import server_pilot_1 from "../assets/server_pilot_1.png";
 
 // Shared technology stack defined once outside the component to avoid re-creation on every render.
 const TECH_STACK = [
@@ -44,29 +61,28 @@ const PROJECTS = [
     }, {
       icon: SiTailwindcss, name: "Tailwind CSS", color: TAILWIND_ICON_COLOR
     },],
-    liveUrl: "#",
-    githubUrl: "#",
-    isCompleted: false,
+    liveUrl: MOVIES_APP_LIVE_URL,
+    githubUrl: MOVIES_APP_REPO_URL,
+    isCompleted: true,
   },
-  {
+    {
     id: 2,
-    title: "Project Manager - Task Tracker for Developers",
+    title: "ServerPilot - Linux Server Management",
     description:
-      "Collaborative project management tool with Kanban boards, real-time updates, and team communication features. Users can create projects, assign tasks, set deadlines, and track progress with visual dashboards.",
-    image: project_manager,
-    technologies: [{
-      icon: SiReact, name: "React JS", color: REACT_ICON_COLOR,
-    }, {
-      icon: SiSpringboot, name: "Spring Boot", color: SPRING_BOOT_ICON_COLOR,
-    }, {
-      icon: SiJavascript, name: "JavaScript", color: JAVASCRIPT_ICON_COLOR
-    }, {
-      icon: SiGit, name: "Version Control", color: VERSION_CONTROL_ICON_COLOR
-    }, {
-      icon: SiTailwindcss, name: "Tailwind CSS", color: TAILWIND_ICON_COLOR
-    },],
+      "ServerPilot is a web-based tool for managing Linux servers over SSH. Connect to your servers using a password or private key, monitor live system metrics like CPU, RAM, and disk usage, and manage running processes and service, all from a clean browser interface. Built with React on the frontend and Spring Boot on the backend.",
+    image: server_pilot_1,
+    technologies: [
+      { icon: SiReact, name: "React JS", color: REACT_ICON_COLOR },
+      { icon: SiSpringboot, name: "Spring Boot", color: SPRING_BOOT_ICON_COLOR },
+      { icon: SiTailwindcss, name: "Tailwind CSS", color: TAILWIND_ICON_COLOR },
+      { icon: SiJavascript, name: "JavaScript", color: JAVASCRIPT_ICON_COLOR },
+      { icon: FaJava, name: "Java", color: JAVA_ICON_COLOR },
+      { icon: SiLinux, name: "Linux", color: LINUX_ICON_COLOR },
+      { icon: Terminal, name: "SSH", color: SSH_ICON_COLOR },
+      { icon: SiGit, name: "Version Control", color: VERSION_CONTROL_ICON_COLOR },
+    ],
     liveUrl: "#",
-    githubUrl: "#",
+    githubUrl: SERVER_PILOT_REPO_URL,
     isCompleted: false,
   },
 ];
